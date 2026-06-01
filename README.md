@@ -1,7 +1,8 @@
-# ![eduMEET](/public/images/logo.edumeet.svg) Edumeet client
+# Zed Live client
 
-This is the client service for the Edumeet project.
+This is the frontend for **Zed Live**, a self-hosted video conferencing product built on top of [eduMEET](https://github.com/edumeet).
 
+This repository is a fork of [`edumeet/edumeet-client`](https://github.com/edumeet/edumeet-client). Keep `upstream` pointed at eduMEET so we can pull security fixes and feature updates while maintaining Zed Live branding, UX, and product changes here.
 
 ![](img/edumeet-client.drawio.png)
 
@@ -29,7 +30,7 @@ This will produce a `./build` directory, ready to be deployed. Https is needed f
 
 You would in most cases want to replace the `config/` and `images/` directories with your own content.
 
-https://github.com/edumeet/edumeet-docker/tree/4.x has guidelines for running the next generation Edumeet as docker containers.
+[`zed-live-docker`](https://github.com/AymenBouchali/zed-live-docker) contains the Docker stack we use for local development and deployment. It is forked from `edumeet-docker`.
 
 ## Configuration
 The app configuration file should be a valid javascript file defining a single
