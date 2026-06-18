@@ -1,9 +1,14 @@
-# ![eduMEET](/public/images/logo.edumeet.svg) Edumeet client
+# Zed Live client
 
-This is the client service for the Edumeet project.
-
+Web frontend for **Zed Live** — the self-hosted video conferencing platform for
+**zedacademy.net**.
 
 ![](img/edumeet-client.drawio.png)
+
+> **Upstream:** Core meeting UI logic comes from the open-source
+> [edumeet-client](https://github.com/edumeet/edumeet-client) project. Keep the
+> `upstream` remote pointed there to pull security fixes; put Zed Live branding,
+> UX, and product changes in this repo.
 
 ## Usage
 ### Running the service in development
@@ -29,7 +34,7 @@ This will produce a `./build` directory, ready to be deployed. Https is needed f
 
 You would in most cases want to replace the `config/` and `images/` directories with your own content.
 
-https://github.com/edumeet/edumeet-docker/tree/4.x has guidelines for running the next generation Edumeet as docker containers.
+[`zed-live-docker`](https://github.com/AymenBouchali/zed-live-docker) contains the Docker stack we use for local development and deployment.
 
 ## Configuration
 The app configuration file should be a valid javascript file defining a single
@@ -46,7 +51,7 @@ var config = {
   // Example: keep room id in URL after leaving (4.2+)
   keepRoomNameOnLeave: true,
 
-  // Theme configuration (MUI ThemeOptions + edumeet custom keys)
+  // Theme configuration (MUI ThemeOptions + Zed Live theme keys)
   // You can override Material UI theme values, e.g. palette.primary.main:
   theme: {
     palette: {
@@ -72,7 +77,7 @@ var config = {
     precallTitleTextColor: 'rgba(0, 0, 0, 1.0)',
     precallTitleIconColor: 'rgba(0, 0, 0, 1.0)',
 
-    logo: 'images/logo.edumeet.svg'
+    logo: 'images/logo.svg'
   }
 };
 ```
@@ -112,7 +117,7 @@ The client merges your `window.config` with built-in defaults (see `src/utils/ty
 | audioPreset | Selected audio preset. | `string` | `conference` |
 | audioPresets | Available audio presets. | `object` | `{ ... }` |
 | buttonControlBar | Show media control buttons in separate control bar. | `boolean` | `true` |
-| title | Application title. | `string` | `edumeet` |
+| title | Application title. | `string` | `Zed Live` |
 | randomizeOnBlank | Randomize room name when blank. | `boolean` | `true` |
 | keepRoomNameOnLeave | (4.2+) Keep the room name in the URL when leaving the room. | `boolean` | `true` |
 | transcriptionEnabled | Enable transcription. | `boolean` | `true` |
@@ -134,7 +139,7 @@ Theme/UI parameters live under `config.theme` (they were previously shown mixed 
 | theme.precallTitleColor | Pre-call title background color. | `string` | `rgba(255, 255, 255, 1.0)` |
 | theme.precallTitleTextColor | Pre-call title text color. | `string` | `rgba(0, 0, 0, 1.0)` |
 | theme.precallTitleIconColor | Pre-call title icon color. | `string` | `rgba(0, 0, 0, 1.0)` |
-| theme.logo | Logo URL. | `string` | `images/logo.edumeet.svg` |
+| theme.logo | Logo URL. | `string` | `images/logo.svg` |
 | theme.activeSpeakerBorder | Active speaker border CSS. | `string` | `1px solid rgba(255, 255, 255, 1.0)` |
 | theme.videoBackroundColor | Video tile background color. | `string` | `rgba(49, 49, 49, 0.9)` |
 | theme.videoAvatarImage | Fallback avatar image URL. | `string` | `images/buddy.svg` |
